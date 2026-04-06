@@ -13,7 +13,15 @@ const app = express();
 /**
  * Core Middlewares
  */
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      process.env.FRONTEND_URL, // production frontend
+      "http://localhost:8080",  // local frontend (vite)
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 /**
