@@ -16,8 +16,8 @@ const app = express();
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL, // production frontend
-      "http://localhost:8080",  // local frontend (vite)
+      process.env.FRONTEND_URL_1,
+      process.env.FRONTEND_URL_2,
     ],
     credentials: true,
   })
